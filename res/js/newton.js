@@ -17,7 +17,7 @@ var cos_minus_x = function(x){
 	return Math.cos(x) - x;
 }
 
-var newtown_solve = function(f, f_prime, start_p, tol, max_iter){
+var newton_solve = function(f, f_prime, start_p, tol, max_iter){
 	var i = 1;	
 	var p0 = start_p;
 	while( i < max_iter ){
@@ -28,6 +28,5 @@ var newtown_solve = function(f, f_prime, start_p, tol, max_iter){
 		++i;
 		p0 = p;
 	}
-	alert("Newton-Raphson failed to converge!");
 	return p;
 }
