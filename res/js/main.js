@@ -6,15 +6,15 @@ $(document).ready(function() {
 
   var time = 0;
 
-  var equation = overdamped_equation(50,-3,-2,-7);
+  var equation = underdamped_equation(300,0,10,0,-2);
 
   var move_ball = function () {
     /* First get the position at time, then increment time
      * by one second, then get the next position.
      */
-    var posn1 = equation(time) * 500;
-    time += 1;
-    var posn2 = equation(time) * 500;
+    var posn1 = equation(time);
+    time += .01;
+    var posn2 = equation(time);
 
     /* We have to set the transform attribute of the ball
      * back to 0, 0 for the animation to work more than once.
@@ -23,9 +23,9 @@ $(document).ready(function() {
      */
     ball.attr({
       "transform" : "t 0 0",
-      "cy" : posn1
+      "cy" : posn1 + 100
     }).animate( // posn2 - posn1 is a displacement vector.  This lasts 1 sec.
-      {"transform" : ["t", 0, posn2 - posn1]}, 1000, move_ball);
+      {"transform" : ["t", 0, posn2 - posn1]}, 1, move_ball);
   };
 
   move_ball(); 

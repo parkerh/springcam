@@ -18,7 +18,7 @@ var underdamped_equation = function(c_1,c_2,r_1,r_2,r_r) {
   return function(time) {
     var a = r_1 * time;
     var b = r_2 * time;
-    var e = Math.pow(Math.e, r_r * time);
+    var e = Math.pow(Math.E, r_r * time);
 
     /* Math.cos and Math.sin take arguments in radians. */
     var posn = e * 
