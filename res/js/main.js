@@ -32,6 +32,8 @@ $(document).ready(function() {
 
   //Solution, according to page 59 of "Numerical Analysis, Fifth Edition by Burden and Faires,
   //is 0.7390851332
-  var result = newtown_solve(cos_minus_x, cos_minus_x_prime, Math.PI/4, 1e-6, 4);
-  alert("Newtown-Raphson result is: " + result);
+  //var result = newton_solve(cos_minus_x, cos_minus_x_prime, Math.PI/4, 1e-6, 4);
+  //Solution, according to p. 59 of the same textbook, is 1.36523001
+  //var result = newton_solve(test_poly, test_poly_prime, 1.5, 1e-6, 6);
+  //alert("Newtown-Raphson result is: " + result);
 });
