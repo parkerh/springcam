@@ -29,5 +29,9 @@ $(document).ready(function() {
   };
 
   move_ball(); 
-});
 
+  //Solution, according to page 59 of "Numerical Analysis, Fifth Edition by Burden and Faires,
+  //is 0.7390851332
+  var result = newtown_solve(cos_minus_x, cos_minus_x_prime, Math.PI/4, 1e-6, 4);
+  alert("Newtown-Raphson result is: " + result);
+});
