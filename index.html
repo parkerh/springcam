@@ -3,8 +3,10 @@
     <script type="text/javascript" src="res/js/newton.js"></script>
     <script type="text/javascript" src="res/js/jquery-min.js"></script>
     <script type="text/javascript" src="res/js/raphael-min.js"></script>
-    <script type="text/javascript" src="res/js/main.js"></script>
     <script type="text/javascript" src="res/js/equations.js"></script>
+    <script type="text/javascript" src="res/js/quadratic.js"></script>
+    <script type="text/javascript" src="res/js/equation-solver.js"></script>
+    <script type="text/javascript" src="res/js/main.js"></script>
     <style type="text/css">
       #canvas_container {
         width: 500px;
@@ -14,5 +16,10 @@
   </head>
   <body>
     <div id="canvas_container"></div>
+    <p>Enter c, the damping constant.
+    <input type="box" id="damping"></input></p>
+    <p>Enter k, the spring constant.
+    <input type="box" id="spring"></input></p>
+    <button id="start">Start!</button>
   </body>
 </html>

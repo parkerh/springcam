@@ -5,6 +5,7 @@ $(document).ready(function () {
   var ball;
   var time = 0;
 
+  var started = false;
   var equation;
 
   var move_ball = function () {
@@ -31,23 +32,17 @@ $(document).ready(function () {
     var spring_constant = $("#spring").val();
     var damping_constant = $("#damping").val();
 
-    if (
+    if (started == false && 
         $.isNumeric(spring_constant) && 
         $.isNumeric(damping_constant)) 
     {
-      eqn_coeffs = equation_solver(damping_constant,spring_constant);
-      if (ball) {
-        ball.hide();
-      };
+      equation_solver(damping_constant,spring_constant);
       ball = paper.circle(150, 50, 10);
-      equation = overdamped_equation(
-        eqn_coeffs[0],
-        eqn_coeffs[1],
-        eqn_coeffs[2],
-        eqn_coeffs[3]);
+      equation = overdamped_equation(200,0,-1,0);
 
       ball.attr({"gradient": "90-#526c7a-#64a0c1"});
       move_ball(); 
+      started = true;
     }
   });
 
