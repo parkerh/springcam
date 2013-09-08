@@ -17,6 +17,14 @@ var cos_minus_x = function(x){
 	return Math.cos(x) - x;
 }
 
+var test_poly = function(x){
+	return Math.pow(x,3) + 4*x*x - 10;	
+}
+
+var test_poly_prime = function(x){
+	return 3*x*x + 8*x;	
+}
+
 var newton_solve = function(f, f_prime, start_p, tol, max_iter){
 	var i = 1;	
 	var p0 = start_p;
